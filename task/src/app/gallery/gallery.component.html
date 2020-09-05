@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="open">
+    <label> Загрузите изображение :
+      <input type="file" (change)="makegallery($event)">
+    </label>
+  </div>
+  <p>Загруженные изображения</p>
+  <div class="images" *ngIf="condition">
+    <div class="images__container" *ngFor="let item of arr">
+        <img src="{{item[0]}}" alt="pic">
+        <p>{{item[1]}}</p>
+    </div>
+    <div *ngIf="conditionimage" class="images__container newimage">
+      <img src="{{newimage.url}}" alt="pic">
+        <p>{{newimage.name}}</p>
+    </div>
+  </div>
+  <div *ngIf="!condition" class="noimages">
+    <p>Изображения не загружены</p>
+  </div>
+</div>
